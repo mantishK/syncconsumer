@@ -29,7 +29,7 @@ func TestSyncconsumer(t *testing.T) {
 		wg.Done()
 	}()
 	wg.Wait()
-	s.Close()
+	s.WaitNClose()
 
 	assert.ElementsMatch(t, all, []int{1, 2, 3, 8, 9, 10})
 }
@@ -61,7 +61,7 @@ func TestSyncconsumerMultiple(t *testing.T) {
 		wg.Done()
 	}()
 	wg.Wait()
-	s.Close()
+	s.WaitNClose()
 
 	assert.ElementsMatch(t, all, []int{1, 2, 3, 8, 9, 10})
 	assert.ElementsMatch(t, square, []int{1, 4, 9, 64, 81, 100})
@@ -70,7 +70,7 @@ func TestSyncconsumerMultiple(t *testing.T) {
 func TestIncorrectClose(t *testing.T) {
 	s := New(func(data int) {})
 
-	s.Close()
+	s.WaitNClose()
 
 	err := s.Publish(1, 2, 3)
 	assert.Error(t, err)

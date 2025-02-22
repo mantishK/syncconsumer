@@ -32,7 +32,7 @@ func New[T any](fn ...func(a T)) *syncconsumer[T] {
 	return s
 }
 
-func (s *syncconsumer[T]) Close() {
+func (s *syncconsumer[T]) WaitNClose() {
 	s.wg.Wait()
 	close(s.bridge)
 }

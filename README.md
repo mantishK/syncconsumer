@@ -1,5 +1,5 @@
 # syncconsumer
-## A synchronous consumer for Go.
+## Synchronous consumer for Go.
 
 Often times we come across a usecase where we want to append the data to a slice from asynchronous go routines.
 This tiny lib can help you do exactly that.
@@ -15,7 +15,7 @@ go get github.com/mantishK/syncconsumer@
 import "github.com/mantishK/syncconsumer"
 
 func main() {
-  all := make([]int, 0)
+  	all := make([]int, 0)
 	s := syncconsumer.New(
 		func(data int) {
 			all = append(all, data)

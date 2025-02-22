@@ -1,4 +1,4 @@
-module syncconsumer
+module github.com/mantishK/syncconsumer
 
 go 1.23.2
 

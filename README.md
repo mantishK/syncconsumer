@@ -1,12 +1,12 @@
-# syncconsumer
-## Synchronous consumer for Go.
+# Syncconsumer
+## synchronous consumer for Go.
 
 Often times we come across a usecase where we want to append the data to a slice from asynchronous go routines.
 This tiny lib can help you do exactly that.
 
 ## download
 ```
-go get github.com/mantishK/syncconsumer@
+go get github.com/mantishK/syncconsumer@latest
 ```
 
 ## usage
